@@ -15,7 +15,44 @@
 
 </head>
 <body>
+
     <h1>Crystals Collector!</h1>
+
+    <article>
+        <p>You'll be given a random number at the beginning of each game in the box below.</p>
+        <p>Each of the four crystals below has a given value assigned for the length of each round.</p>
+        <p>The value of the crystal won't be revealed until after it is clicked.</p>
+        <p>You win the game by matching the value of your clicks to the random number assigned at the start of the game, but if your clicks add up to a higher value... YOU LOSE!</p>
+        <p>Enjoy!</p>
+    </article>
+
+    <section>
+        <div class="random-number"></div>
+    </section>
+
+    <container class="game-display">
+
+        <div id="wins">Wins:</div>
+        
+        <div id="losses">Losses:</div>
+
+    </container>
+
+    <section>
+
+        <img id="crystal1" src="assets/images/lightgreen.png">
+
+        <img id="crystal2" src="assets/images/green.png">
+
+        <img id="crystal3" src="assets/images/gray.png">
+
+        <img id="crystal4" src="assets/images/yellow.png">
+        
+    </section>
+
+    <div class="score">Your Score:
+        <div id="score"></div>
+    </div>
 
     <script src="assets/javascript/game.js"></script>
 </body>
