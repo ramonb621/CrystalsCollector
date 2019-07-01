@@ -1,0 +1,27 @@
+/* Color Theme Swatches in Hex */
+.My-Color-Theme-1-hex { color: #A6BF8F; }
+.My-Color-Theme-2-hex { color: #6F8060; }
+.My-Color-Theme-3-hex { color: #DDFFBF; }
+.My-Color-Theme-4-hex { color: #374030; }
+.My-Color-Theme-5-hex { color: #C7E6AC; }
+
+/* Color Theme Swatches in RGBA */
+.My-Color-Theme-1-rgba { color: rgba(166, 191, 143, 1); }
+.My-Color-Theme-2-rgba { color: rgba(111, 128, 96, 1); }
+.My-Color-Theme-3-rgba { color: rgba(221, 255, 191, 1); }
+.My-Color-Theme-4-rgba { color: rgba(55, 64, 48, 1); }
+.My-Color-Theme-5-rgba { color: rgba(199, 230, 172, 1); }
+
+/* Color Theme Swatches in HSLA */
+.My-Color-Theme-1-hsla { color: hsla(91, 27, 65, 1); }
+.My-Color-Theme-2-hsla { color: hsla(91, 14, 43, 1); }
+.My-Color-Theme-3-hsla { color: hsla(91, 100, 87, 1); }
+.My-Color-Theme-4-hsla { color: hsla(93, 14, 21, 1); }
+.My-Color-Theme-5-hsla { color: hsla(92, 53, 78, 1); }
+
+body{
+
+    font-family:'Press Start 2P', 'Bangers', 'Barriecito';
+    
+
+}
