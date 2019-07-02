@@ -22,6 +22,34 @@
 body{
 
     font-family:'Press Start 2P', 'Bangers', 'Barriecito';
-    
+    background-color: #374030;
 
+}
+h1{
+    display: block;
+    margin-top: 25px;
+    margin-left: 25px;
+    color: goldenrod;
+    width: 450px;
+    text-align: center;
+}
+article{
+    width: 960px;
+    background-color: white;
+    text-align: justify;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.crystal{
+    height: 200px;
+    width: 200px;
+}
+.container{
+    display:block;
+    position: absolute;
+    width: 960px;
+    left:0;
+    right:0;
+    margin:auto;
 }
