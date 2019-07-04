@@ -2,11 +2,9 @@ $(document).ready(function() {
 
     var mainRandom = "";
 
-    var crystalRandom = [1,2,3,4,5,6,7,8,9,10,11,12];
+    var crystalRandom = Math.floor(Math.random() * 13);
 
-    var crystalValue = "";
-
-    var currentCrystalValue = "";
+    var currentCrystalValue = ""; //will be the variable that will add the new variable value to crystalRandom
 
     var wins = "";
 
@@ -14,10 +12,12 @@ $(document).ready(function() {
 
     var score = "";
 
+    //create variable storing math.floor(math.random), place it under each button click function, and set another variable += to the storing variables number. This will save the value for remainder of session. 
+
     
     $("#random-number").ready(function(){
 
-        mainRandom =Math.floor(Math.random(Math.min() * (Math.max())) * 100);
+        mainRandom =Math.floor(Math.random(Math.min() * (Math.max())) * 120);
 
         $("#random-number").text(mainRandom);
         //WORKING
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     $("#crystal1").on("click", function(){
 
-        crystalRandom = Math.floor(Math.random(Math.min() * (Math.max()))  * 12);
+        crystalRandom += currentCrystalValue;
 
         //MIGHT HAVE TO DISSECT TO MAKE RANDOM # THAT STAYS THE SAME EACH ROUND FOR EACH CRYSTAL
         crystalRandom++;
@@ -35,76 +35,79 @@ $(document).ready(function() {
     
     $("#crystal2").on("click", function(){
 
-        for (var i = 0; i < crystalRandom.length; i++);
-        crystalRandom[i];
+       
+        crystalRandom += currentCrystalValue;
+
+        //MIGHT HAVE TO DISSECT TO MAKE RANDOM # THAT STAYS THE SAME EACH ROUND FOR EACH CRYSTAL
         crystalRandom++;
-        // crystalRandom =Math.floor(Math.random(Math.min(1) * (Math.max(12))) * 10);
-        // //MIGHT HAVE TO DISSECT TO MAKE RANDOM # THAT STAYS THE SAME EACH ROUND 
-        console.log(i);
+        updateScore();//TRIGGER EVENT TO UPDATE SCORE??
+        console.log(crystalRandom);
     })
 
     $("#crystal3").on("click", function(){ //THIS FUNCTION UPDATES SINGLE NUMBER TO TOTAL BUT ONLY ALLOWS ONE CLICK PER ROUND*
 
-        for(var i = 0; i < crystalRandom.length; i++){
-            crystalRandom = Math.floor(Math.random() * (crystalRandom.length + 1));
-            if( crystalRandom < 12 || crystalRandom > 1 ){
-             crystalRandom[i];   
-            }
-            crystalRandom++;
-            updateScore();
-        //MIGHT HAVE TO DISSECT TO MAKE RANDOM # THAT STAYS THE SAME EACH ROUND 
+       
+        crystalRandom += currentCrystalValue;
+
+        //MIGHT HAVE TO DISSECT TO MAKE RANDOM # THAT STAYS THE SAME EACH ROUND FOR EACH CRYSTAL
+        crystalRandom++;
+        updateScore();//TRIGGER EVENT TO UPDATE SCORE??
         console.log(crystalRandom);
-        checkWin();
-    }
-})
-
-    $("#crystal4").on("click", function(){
-        for(var i = 0; i < crystalRandom.length; i++){
-           do{
-               crystalValue = Math.floor(Math.random() * crystalRandom.length);
-           }while (updateScore());
-
-           document.getElementById("score").innerText = crystalRandom--;
-
-        }
-        checkWin();
+    
     })
 
-    function crystalValue(){
-        for( var i = 0; i < currentCrystalValue.length; i++) {
-            if(currentCrystalValue[i] === crystalValue) {
-                updateScore();
-                checkWin();
-            }
-        }
-    }
+    $("#crystal4").on("click", function(){
+       
+        crystalRandom += currentCrystalValue;
+
+        //MIGHT HAVE TO DISSECT TO MAKE RANDOM # THAT STAYS THE SAME EACH ROUND FOR EACH CRYSTAL
+        crystalRandom++;
+        updateScore();//TRIGGER EVENT TO UPDATE SCORE??
+        console.log(crystalRandom);
+    })
+
+    // function crystalValue(){
+    //     for( var i = 0; i < currentCrystalValue.length; i++) {
+    //         if(currentCrystalValue[i] === crystalValue) {
+    //             updateScore();
+    //             checkWin();
+    //         }
+    //     }
+    // }
     
     function updateScore(){
-
-            document.getElementById("score").innerText = crystalRandom--;
-            checkWin();
-        }
-
-    function checkWin(){
-        if (score === mainRandom){
-            document.getElementById("wins").innerText = win++;
-            reset();
-        } else if(score > mainRandom){
+        if(score > mainRandom) {
             document.getElementById("losses").innerText = losses++;
             reset();
-        }else{
-            updateScore;
         }
-    }
+        if(score === mainRandom){
+            document.getElementById("wins").innerText = wins++;
+            reset();            
+        } else if (score < mainRandom){
+        document.getElementById("score").innerText = crystalRandom++;
+        }
+
+    // function checkWin(){
+    //     if (score === mainRandom){
+    //         reset();
+    //     } else if(score > mainRandom){
+    //         document.getElementById("losses").innerText = losses++;
+    //         reset();
+    //     }else{
+    //         updateScore();
+    //     }
+    // }
 
     function reset(){
 
         mainRandom = "";
-        crystalValue = "";
+        crystalRandom = "";
+        currentCrystalValue = "";
         wins = "";
         losses = "";
         score = "";
 
     }
-
-})    
+    }
+    
+})

@@ -23,10 +23,14 @@ body{
 
     font-family:'Press Start 2P', 'Bangers', 'Barriecito';
     background-color: #374030;
-
+    right: 0;
+    left:0;
+    width: 100%;
+    margin:auto;
 }
 h1{
     display: block;
+    position: relative;
     margin-top: 25px;
     margin-left: 25px;
     color: goldenrod;
@@ -36,10 +40,48 @@ h1{
 article{
     width: 960px;
     background-color: white;
+    border: solid black;
     text-align: justify;
+    padding: 5px;
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 2;
+}
+.random-number{
+    display:block;
+    position: relative;
+    background-color: white;
+    border: solid black;
+    color:black;
+    padding: 5px;
+    width:100px;
+    left:50px;
+    top:50px;
+    text-align: center;
+    z-index: 2;
+}
+.score{
+    display: block;
+    position: relative;
+    left:1000px;
+    bottom: 300px;
+    background-color: white;
+    border: solid black;
+    color:black;
+    padding: 5px;
+    width: 100px;
+    z-index: 3;
+}
+.game-display{
+    display: block;
+    position: relative;
+    width: 125px;
+    background-color: white;
+    color: black;
+    border: solid black;
+    bottom:0;
+    left:0;
 }
 .crystal{
     height: 200px;
@@ -47,9 +89,12 @@ article{
 }
 .container{
     display:block;
-    position: absolute;
+    position: relative;
     width: 960px;
-    left:0;
+    left:45px;
     right:0;
     margin:auto;
+}
+#random-number{
+    font-size: 24px;
 }
