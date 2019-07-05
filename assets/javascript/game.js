@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    
     var mainRandom = "";
 
     var crystalRandom = Math.floor(Math.random() * 13);
@@ -10,14 +10,14 @@ $(document).ready(function() {
 
     var losses = "";
 
-    var score = "";
+    var score = 0;
 
     //create variable storing math.floor(math.random), place it under each button click function, and set another variable += to the storing variables number. This will save the value for remainder of session. 
 
     
     $("#random-number").ready(function(){
 
-        mainRandom =Math.floor(Math.random(Math.min() * (Math.max())) * 121);
+        mainRandom =Math.floor(Math.random() * 100 + 21);
 
         $("#random-number").text(mainRandom);
         //WORKING
@@ -25,61 +25,66 @@ $(document).ready(function() {
 
     $("#crystal1").on("click", function(){
 
-        crystalRandom += currentCrystalValue;
+        crystalRandom += currentCrystalValue++;
 
-        // currentCrystalValue;
+        // crystalRandom;
+
     
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
-        console.log(crystalRandom);
 
     })
     
     $("#crystal2").on("click", function(){
 
        
-        crystalRandom += currentCrystalValue;
+        crystalRandom += currentCrystalValue++;
 
-        crystalRandom;
+        // crystalRandom;
 
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
-        console.log(crystalRandom);
 
     })
 
     $("#crystal3").on("click", function(){ //THIS FUNCTION UPDATES SINGLE NUMBER TO TOTAL BUT ONLY ALLOWS ONE CLICK PER ROUND*
 
        
-        crystalRandom += currentCrystalValue;
+        crystalRandom += currentCrystalValue++;
 
-        crystalRandom;
+        // crystalRandom;
 
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
-        console.log(crystalRandom);
 
     })
 
     $("#crystal4").on("click", function(){
-       
 
-        crystalRandom += currentCrystalValue;
+        crystalRandom += currentCrystalValue++;
 
-        crystalRandom;
+        // crystalRandom;
 
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
-        console.log(crystalRandom);
+
     })
     
     function updateScore(){
-        if(score >= mainRandom) {
-            document.getElementById("losses").innerText = losses++;
-            document.getElementsByClassName("message").innerHTML = "You Lose!"
-            reset();
-        }else if(score === mainRandom){
-            document.getElementById("wins").innerText = wins++;
+        score += currentCrystalValue;
+        if(score == mainRandom){
+            document.getElementById("wins").innerText = wins + 1;
             document.getElementsByClassName("message").innerHTML = "You Win!"
+            console.log(crystalRandom);
+
+            reset();            
+        
+        }else if(score > mainRandom) {
+            document.getElementById("losses").innerText = losses + 1;
+            document.getElementsByClassName("message").innerHTML = "You Lose!"
+            console.log(crystalRandom);
+
             reset();            
         } else {
-        document.getElementById("score").innerText = currentCrystalValue++;
+        document.getElementById("score").innerText = crystalRandom++;
+
+        console.log(crystalRandom);
         }
     }
 
