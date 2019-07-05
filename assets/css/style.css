@@ -41,6 +41,7 @@ article{
     width: 960px;
     background-color: white;
     border: solid black;
+    border-radius:25px;
     text-align: justify;
     padding: 5px;
     left: 0;
@@ -55,34 +56,36 @@ article{
     border: solid black;
     color:black;
     padding: 5px;
-    width:100px;
+    width:160px;
     left:50px;
-    top:50px;
+    top:10px;
     text-align: center;
     z-index: 2;
 }
 .score{
     display: block;
-    position: relative;
-    left:1000px;
-    bottom: 300px;
+    position: absolute;
+    right: 55px;
+    top: 474px;
     background-color: white;
     border: solid black;
     color:black;
     padding: 5px;
-    width: 100px;
+    width: 150px;
+    text-align: center;
     z-index: 3;
 }
-.game-display{
+/* .game-display{
     display: block;
     position: relative;
     width: 125px;
+    margin: auto;
     background-color: white;
     color: black;
     border: solid black;
-    bottom:0;
-    left:0;
-}
+    bottom:0px;
+    left:20px;
+} */
 .crystal{
     height: 200px;
     width: 200px;
