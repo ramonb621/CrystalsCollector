@@ -1,14 +1,14 @@
 $(document).ready(function() {
     
-    var mainRandom = "";
+    var mainRandom = Math.floor(Math.random() * 100 + 21);
 
     var crystalRandom = Math.floor(Math.random() * 13);
 
-    var currentCrystalValue = ""; //will be the variable that will add the new variable value to crystalRandom
+    // var currentCrystalValue = ""; //will be the variable that will add the new variable value to crystalRandom
 
-    var wins = "";
+    var wins = 0;
 
-    var losses = "";
+    var losses = 0;
 
     var score = 0;
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
     
     $("#random-number").ready(function(){
 
-        mainRandom =Math.floor(Math.random() * 100 + 21);
+        // mainRandom;
 
         $("#random-number").text(mainRandom);
         //WORKING
@@ -25,9 +25,9 @@ $(document).ready(function() {
 
     $("#crystal1").on("click", function(){
 
-        crystalRandom += currentCrystalValue++;
+        // crystalRandom += currentCrystalValue;
 
-        // crystalRandom;
+        crystalRandom;
 
     
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
@@ -37,9 +37,9 @@ $(document).ready(function() {
     $("#crystal2").on("click", function(){
 
        
-        crystalRandom += currentCrystalValue++;
+        // crystalRandom += currentCrystalValue;
 
-        // crystalRandom;
+        crystalRandom;
 
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
 
@@ -48,9 +48,9 @@ $(document).ready(function() {
     $("#crystal3").on("click", function(){ //THIS FUNCTION UPDATES SINGLE NUMBER TO TOTAL BUT ONLY ALLOWS ONE CLICK PER ROUND*
 
        
-        crystalRandom += currentCrystalValue++;
+        // crystalRandom += currentCrystalValue;
 
-        // crystalRandom;
+        crystalRandom;
 
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
 
@@ -58,44 +58,42 @@ $(document).ready(function() {
 
     $("#crystal4").on("click", function(){
 
-        crystalRandom += currentCrystalValue++;
+        // crystalRandom += currentCrystalValue;
 
-        // crystalRandom;
+        crystalRandom;
 
         updateScore();//TRIGGER EVENT TO UPDATE SCORE??
 
     })
     
     function updateScore(){
-        score += currentCrystalValue;
-        if(score == mainRandom){
-            document.getElementById("wins").innerText = wins + 1;
-            document.getElementsByClassName("message").innerHTML = "You Win!"
-            console.log(crystalRandom);
+        score += crystalRandom;
+        if(score === mainRandom){
+            document.getElementById("wins").innerText = wins +1;
+            $("#message").html("You Win!");
+            console.log(score);
 
             reset();            
         
         }else if(score > mainRandom) {
-            document.getElementById("losses").innerText = losses + 1;
-            document.getElementsByClassName("message").innerHTML = "You Lose!"
-            console.log(crystalRandom);
+            document.getElementById("losses").innerText = losses +1;
+            $("#message").html("You Lose!");
+            console.log(score);
 
-            reset();            
+            reset();         
+               
         } else {
-        document.getElementById("score").innerText = crystalRandom++;
-
-        console.log(crystalRandom);
+        $("#score").html(crystalRandom + score);
+        
+        console.log(score);
         }
     }
 
     function reset(){
 
-        mainRandom = "";
-        crystalRandom = "";
-        currentCrystalValue = "";
-        wins = "";
-        losses = "";
-        score = "";
+        mainRandom = Math.floor(Math.random() * 100 + 21);
+        crystalRandom = Math.floor(Math.random() * 13);
+        score = 0;
 
     }
     

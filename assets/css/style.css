@@ -98,6 +98,14 @@ article{
     right:0;
     margin:auto;
 }
+#message{
+    width: 300px;
+    right:0;
+    left:0;
+    margin: auto;
+    color:goldenrod;
+    font-size: 28px;
+}
 #random-number{
     font-size: 24px;
 }
